@@ -26,7 +26,6 @@ header {
 main {
     display: flex;
     padding: 20px;
-    /* flex-wrap: wrap; */
     margin-inline: 5%;
 }
 
@@ -55,7 +54,6 @@ nav li a{
 nav ul li:hover a{
     font-weight: bold;
     color: #FF4A57;
-    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
     transition: all .2s ease-in-out;
 }
 
@@ -77,7 +75,6 @@ h3 {
     display: flex;
     justify-content: center;
     margin-block-start: 9rem;
-    /* align-items: center; */
 }
 
 .hero-content {
@@ -131,6 +128,7 @@ h3 {
     background-color: #2B2D41;
     border-radius: 12px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    line-height: 1.4rem;
     margin: 12px;
     padding: 30px;
     flex: 1;
@@ -165,7 +163,6 @@ h3 {
     font-size: 1.2rem;
     width: 78%;
     line-height: 1.6rem;
-    /* border: solid; */
 }
 
 .about img {
@@ -176,26 +173,30 @@ h3 {
 /* End-About */
 
 /* Start-Service */
-.card{
-    line-height: 1.4rem;
+.content-card {
+    display: flex;
+    margin: 20px;
+    gap: 1.5rem;
 }
 
-.card h3{
+.content-card .card-service{
+    background-color: #2B2D41;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    line-height: 1.4rem;
+    padding: 30px;
+    flex: 1;
+}
+
+.card-service h3{
     color: #FF4A57;
     font-size: 1.3rem;
 }
 
-.card p{
+.card-service p{
     padding-top: 12px;
     font-size: 1.2rem;
 }
-
-.content-card {
-    display: flex;
-    margin: 20px;
-    gap: 1rem;
-}
-
 /* End-Service */
 
 .form {
@@ -203,7 +204,6 @@ h3 {
     height: 480px;
     justify-content: center;
     align-items: center;
-    /* border: solid 3px; */
 }
 
 .contact .form .form-input {
@@ -259,13 +259,14 @@ h3 {
 }
 
 /* start-aside */
+
 .profil {
-    min-width: 343px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: stretch;
     text-align: left;
+    padding-inline: 50px;
     gap: .8rem;
 }
 
@@ -277,10 +278,19 @@ h3 {
 
 .profil p{
     font-weight: bold;
+    font-size: 19px;
 }
 
-.profil table{
+.profil table tr{
     line-height: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profil table th{
+    color: #FF4A57;
 }
 
 .profil img {
@@ -292,7 +302,6 @@ h3 {
 .logo-sosmed ul {
     display: flex;
     gap: 1rem;
-    margin-block-start: 18px;
 }
 
 .logo-sosmed ul li {
@@ -305,10 +314,95 @@ h3 {
     transition: all .3s ease-in-out;
 }
 
+/* start footer */
 
-@media screen and (max-width: 1200px) {
-
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2B2D41;
+    color: #fff;
+    padding-block: 18px;
+    gap: 1.2rem;
 }
+
+footer p{
+    font-size: 14px;
+}
+
+footer .nav-footer ul{
+    display: flex;
+    gap: 1.4rem;
+}
+
+footer .nav-footer ul li{
+    list-style-type: none;
+}
+
+footer ul li:hover a{
+    font-weight: bold;
+    color: #fff;
+    transition: all .2s ease-in-out;
+}
+
+footer .nav-footer li a{
+    color: #FF4A57;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/* Qiery Tablet */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    nav ul{
+        margin-block-start: 18px;
+        gap: 1.4rem;
+    }
+
+    main {
+        flex-wrap: wrap;
+        margin-inline: 1%;
+        justify-content: center;
+    }
+
+    .hero{
+        margin-block-start: 21rem;
+        min-height: 80vh;
+    }
+
+    .hero-content{
+        line-height: 2.4rem;
+        text-align: left;
+        margin-inline: 38px;
+    }
+
+    .hero-content i{
+        font-size: 6rem;
+    }
+
+    .hero-content p{
+        margin-block-start: 1rem;
+        line-height: 2rem;
+        font-size: 1.4rem;
+    }
+
+    .content-card{
+        flex-direction: column;
+        width: 100%;
+        padding-block: 12px ;
+        margin: 0;
+    }
+
+    aside{
+        width: 100%;
+    }
+
+    .profil .logo-sosmed{
+        display: none;
+    }
+}
+
+/* Query Smartphone */
 @media screen and (max-width: 768px) {
     header{
         flex-direction: column;
@@ -339,8 +433,8 @@ h3 {
     }
 
     .hero{
-        margin-block-start: 8rem;
-        min-height: 60vh;
+        margin-block-start: 12rem;
+        min-height: 65vh;
     }
 
     .hero-content{
@@ -355,7 +449,6 @@ h3 {
 
     .hero-content h1{
         font-size: 2rem;
-        /* text-align: left; */
     }
 
     .hero-content p{
@@ -409,7 +502,11 @@ h3 {
         font-size: 1rem;
     }
 
-    /* .profil{
-    margin: 2%;
-    } */
+    aside{
+        width: 100%;
+    }
+
+    .profil .logo-sosmed{
+        display: none;
+    }
 }
