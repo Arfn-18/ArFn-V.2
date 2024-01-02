@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 body {
     width: 100%;
     background-color: #23263A;
